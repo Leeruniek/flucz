@@ -1,22 +1,33 @@
 {
   "name": "flucz",
-  "version": "0.2.10",
+  "version": "0.3.0",
   "description": "Redux inspired flux implementation",
   "main": "lib/index.js",
   "scripts": {
-    "compile": "babel -d lib/ src/",
+    "setup": "rm -f package-lock.json && rm -rf ./node_modules && npm i",
+    "check:update": "npm-check -u",
+    "check:security": "nsp check",
+    "compile": "babel src/ --out-dir lib/",
     "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/bogdan-dumitru/flucz"
   },
-  "peerDependencies": {
-    "react": "^0.14.0",
-    "fbjs": "^0.4.0"
+  "dependencies": {
+    "baobab": "2.5.0"
   },
   "devDependencies": {
-    "babel": "^5.8.0"
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.0",
+    "babel-preset-stage-1": "6.24.1",
+    "babel-preset-react": "6.24.1",
+    "npm-check": "5.4.5",
+    "nsp": "2.8.1"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "fbjs": "^0.8.16"
   },
   "keywords": [
     "flux",
@@ -29,8 +40,5 @@
   "bugs": {
     "url": "https://github.com/bogdan-dumitru/flucz/issues"
   },
-  "homepage": "https://github.com/bogdan-dumitru/flucz",
-  "dependencies": {
-    "baobab": "^2.1.1"
-  }
+  "homepage": "https://github.com/bogdan-dumitru/flucz"
 }

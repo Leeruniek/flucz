@@ -1,4 +1,23 @@
 {
-  "stage": 0
-}
+    "presets": [
+        [
+            "env", {
+                "useBuiltIns": "entry",
+                "debug": false,
+                "targets": {
+                    "browsers": [
+                        "last 2 chrome versions",
+                        "last 2 firefox versions",
+                        "last 2 ie versions"
+                    ]
+                }
+            }
+        ],
 
+        // js features with non-final specs
+        "stage-1",
+
+        // jsx support
+        "react"
+    ]
+}
